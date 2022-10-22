@@ -1,21 +1,24 @@
 public class Human {
 
-    int old;
+    private int old;
     String name;
-    String town;
+    private String town;
     String job;
 
     Human(String name, String town, String job, int old) {
-        if (old <= 0){
-            this.old = 0;
-        } else {
-            this.old = old;
-        }
+        setOld(old);
+        setTown(town);
 
         if (name == null) {
             this.name = "Информация не указана";
         } else {
             this.name = name;
+        }
+
+        if (job == null) {
+            this.job = "Информация не указана";
+        } else {
+            this.job = job;
         }
 
         if (town == null) {
@@ -24,14 +27,34 @@ public class Human {
             this.town = town;
         }
 
-        if (job == null) {
-            this.job = "Информация не указана";
+        if (old <= 0){
+            this.old = 0;
         } else {
-            this.job = job;
+            this.old = old;
         }
     }
 
-    void hello() {
-        System.out.println("Привет! Меня зовут " + name +  ". Я из города " + town + ". Мне " + old + " лет. Я работаю на должности " + job + ". Будем знакомы!");
+    public String getTown() {
+        return town;
+    }
+
+    public void setTown(String town) {
+        if (town == null) {
+            this.town = "Информация не указана";
+        } else {
+            this.town = town;
+        }
+    }
+
+    public int getOld() {
+        return old;
+    }
+
+    public void setOld(int old) {
+        if (old <= 0){
+            this.old = 0;
+        } else {
+            this.old = old;
+        }
     }
 }
